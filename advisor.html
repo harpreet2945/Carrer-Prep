@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Career Advisor | CareerPrep</title>
+  <meta name="description" content="Chat with a rule-based career advisor about placements, skills, resumes and interviews.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3l17 9.8v19.4L24 42 7 32.200V12.800z' fill='%2314b8a6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero"><div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / AI Advisor</div>
+      <h1>AI Career Advisor</h1>
+      <p>Your personal assistant for career guidance, placement prep and learning roadmaps.</p>
+    </div></section>
+    <section class="section" style="padding-top:36px"><div class="container"><div id="advisor"></div></div></section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    CP.boot({ active: "advisor.html" });
+    CP.App.advisor(document.getElementById("advisor"));
+  </script>
+</body>
+</html>

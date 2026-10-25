@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In | CareerPrep</title>
+  <meta name="description" content="Sign in to continue your career prep.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3l17 9.8v19.4L24 42 7 32.200V12.800z' fill='%2314b8a6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main id="main">
+    <div class="auth-wrap"><div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="sub">Sign in to continue your career prep.</p>
+      <div id="formMsg" class="err" role="alert" style="margin-bottom:10px;font-size:.85rem"></div>
+      <form id="authForm" novalidate>
+        <div class="field"><label for="email">Email <span class="req">*</span></label><input class="input" id="email" name="email" type="email" autocomplete="email"><span class="err" data-err="email"></span></div>
+        <div class="field"><label for="password">Password <span class="req">*</span></label>
+          <div class="pw-wrap"><input class="input" id="password" name="password" type="password" autocomplete="current-password"><button type="button" class="pw-toggle" data-toggle="password" aria-label="Show password"></button></div>
+          <span class="err" data-err="password"></span></div>
+
+        <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Sign In</button>
+      </form>
+      <p class="auth-foot">New here? <a href="signup.html">Create an account</a> · <a href="index.html">Continue as guest</a></p>
+    </div></div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/views.js"></script>
+  <script>
+    CP.boot({ active: "" });
+    document.querySelectorAll(".pw-toggle").forEach(function (b) {
+      b.innerHTML = CP.icon("eye");
+      b.addEventListener("click", function () {
+        var i = document.getElementById(b.dataset.toggle), show = i.type === "password";
+        i.type = show ? "text" : "password"; b.innerHTML = CP.icon(show ? "eyeoff" : "eye");
+        b.setAttribute("aria-label", show ? "Hide password" : "Show password");
+      });
+    });
+    var form = document.getElementById("authForm"), msg = document.getElementById("formMsg"), btn = document.getElementById("submitBtn");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault(); msg.textContent = "";
+      if (!CP.validate(form, { email: { required: true, email: true }, password: { required: true, msg: "Enter your password." } })) return;
+      btn.disabled = true; btn.textContent = "Signing in…";
+      try { await CP.auth.signIn(form.elements.email.value, form.elements.password.value); CP.toast("Signed in successfully."); setTimeout(function () { location.href = "dashboard.html"; }, 500); }
+      catch (err) { msg.textContent = err.message; btn.disabled = false; btn.textContent = "Sign In"; }
+    });
+  </script>
+</body>
+</html>

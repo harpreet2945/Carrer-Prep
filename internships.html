@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internships | CareerPrep</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1e293b;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 80px;
+            background: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 40px;
+
+            position: sticky;
+            top: 0;
+            z-index: 999;
+
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+
+        .menu-btn {
+            width: 50px;
+            height: 50px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #1e293b;
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 12px;
+
+            background: #38bdf8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+        }
+
+
+        .logo h2 {
+            color: #0f172a;
+        }
+
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+
+            font-weight: 500;
+        }
+
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+
+        .login-btn {
+            background: #374151;
+            color: white;
+
+            padding: 12px 22px;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+        }
+
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 0;
+            height: 100%;
+
+            background: white;
+
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            transition: .4s;
+
+            z-index: 1000;
+
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        }
+
+
+        .sidebar-header {
+            background: linear-gradient(
+                135deg,
+                #1d4ed8,
+                #06b6d4
+            );
+
+            color: white;
+
+            padding: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .logo-box {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 15px;
+
+            background: rgba(255, 255, 255, .15);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 28px;
+        }
+
+
+        .sidebar-logo span {
+            color: #7dd3fc;
+        }
+
+
+        .sidebar-logo p {
+            font-size: 13px;
+        }
+
+
+        .close-btn {
+            border: none;
+
+            background: rgba(255, 255, 255, .15);
+
+            color: white;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 12px;
+
+            font-size: 24px;
+
+            cursor: pointer;
+        }
+
+
+        .sidebar-content {
+            padding: 25px;
+        }
+
+
+        .section-title {
+            font-size: 12px;
+
+            color: #94a3b8;
+
+            letter-spacing: 3px;
+
+            font-weight: 700;
+
+            margin: 20px 0;
+        }
+
+
+        .side-link {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            text-decoration: none;
+
+            color: #111827;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            margin-bottom: 10px;
+
+            transition: .3s;
+
+            font-weight: 600;
+        }
+
+
+        .side-link:hover {
+            background: #f1f5f9;
+        }
+
+
+        .side-link.active {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+
+        .side-icon {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 15px;
+
+            background: #e0f2fe;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 22px;
+        }
+
+
+        .support-box {
+            margin-top: 30px;
+
+            background: #f8fafc;
+
+            padding: 20px;
+
+            border-radius: 20px;
+        }
+
+
+        .support-box p {
+            color: #64748b;
+
+            margin-top: 5px;
+        }
+
+
+        .support-btn {
+            width: 100%;
+
+            margin-top: 15px;
+
+            border: none;
+
+            background: #0f172a;
+
+            color: white;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #2563eb
+            );
+
+            color: white;
+
+            padding: 30px;
+
+            margin: 15px;
+
+            border-radius: 25px;
+        }
+
+
+        .hero h1 {
+            font-size: 45px;
+        }
+
+
+        .hero p {
+            margin-top: 10px;
+
+            font-size: 16px;
+        }
+
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            margin: 15px;
+        }
+
+
+        .search-box input {
+            width: 100%;
+
+            padding: 17px;
+
+            border-radius: 15px;
+
+            border: 1px solid #ddd;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+
+
+        /* ================= INTERNSHIP GRID ================= */
+
+        .internship-grid {
+
+            padding: 0 30px 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================= INTERNSHIP CARD ================= */
+
+        .internship-card {
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.08);
+
+            transition: .4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .internship-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 6px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #06b6d4
+                );
+        }
+
+
+        .internship-card:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 40px
+                rgba(37, 99, 235, 0.2);
+        }
+
+
+        /* ================= COMPANY ================= */
+
+        .company {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 8px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .company-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .company-logo {
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 12px;
+
+            background: #e0f2fe;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 23px;
+
+            flex-shrink: 0;
+        }
+
+
+        .company h4 {
+
+            color: #64748b;
+
+            font-weight: 500;
+        }
+
+
+        /* ================= SAVE BUTTON ================= */
+
+        .save-btn {
+
+            width: 43px;
+            height: 43px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #f8fafc;
+
+            color: #64748b;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+            flex-shrink: 0;
+        }
+
+
+        .save-btn:hover {
+
+            background: #fff7ed;
+
+            color: #f59e0b;
+
+            transform: scale(1.08);
+        }
+
+
+        .save-btn.saved {
+
+            background: #fef3c7;
+
+            color: #f59e0b;
+        }
+
+
+        /* ================= TITLE ================= */
+
+        .internship-card h3 {
+
+            color: #1e293b;
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .internship-card .description {
+
+            color: #64748b;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= DETAILS ================= */
+
+        .details {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .detail {
+
+            background: #f8fafc;
+
+            padding: 10px;
+
+            border-radius: 10px;
+
+            color: #475569;
+
+            font-size: 13px;
+        }
+
+
+        .detail strong {
+
+            display: block;
+
+            color: #1e293b;
+
+            margin-top: 3px;
+        }
+
+
+        /* ================= APPLY BUTTON ================= */
+
+        .apply-btn {
+
+            display: block;
+
+            text-align: center;
+
+            padding: 12px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: 600;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #06b6d4
+                );
+
+            transition: .3s;
+        }
+
+
+        .apply-btn:hover {
+
+            transform: scale(1.03);
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1000px) {
+
+            .internship-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media(max-width: 700px) {
+
+            .navbar {
+
+                padding: 0 15px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .internship-grid {
+
+                grid-template-columns: 1fr;
+
+                padding:
+                    0 15px 30px;
+            }
+
+
+            .hero {
+
+                margin: 10px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 32px;
+            }
+
+        }
+
+
+        @media(max-width: 450px) {
+
+            .sidebar {
+
+                max-width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <button
+                class="menu-btn"
+                onclick="openSidebar()">
+
+                ☰
+
+            </button>
+
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+
+                <h2>
+                    Career<span>Prep</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+
+                
+
+            </ul>
+
+
+            <div class="nav-buttons">
+
+                <a
+                    href="login.html"
+                    class="login-btn">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div
+        id="sidebar"
+        class="sidebar">
+
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-box">
+                    🎓
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Career<span>Prep</span>
+                    </h2>
+
+                    <p>
+                        Your career companion
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                onclick="closeSidebar()">
+
+                ✖
+
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-content">
+
+
+            <div class="section-title">
+                EXPLORE
+            </div>
+
+
+            
+
+
+            <a
+                href="courses.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📚
+                </div>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+
+            <a
+                href="internships.html"
+                class="side-link active">
+
+                <div class="side-icon">
+                    💼
+                </div>
+
+                <span>
+                    Internships
+                </span>
+
+            </a>
+
+
+            <a
+                href="jobs.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🔍
+                </div>
+
+                <span>
+                    Jobs
+                </span>
+
+            </a>
+
+
+            <a
+                href="interview.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🎤
+                </div>
+
+                <span>
+                    Interview Preparation
+                </span>
+
+            </a>
+
+
+            <div class="section-title">
+                CAREER TOOLS
+            </div>
+
+
+            <a
+                href="aptitude.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🧠
+                </div>
+
+                <span>
+                    Aptitude & Coding
+                </span>
+
+            </a>
+
+
+            <a
+                href="resume.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📄
+                </div>
+
+                <span>
+                    Resume Builder
+                </span>
+
+            </a>
+
+
+            <a
+                href="application.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📊
+                </div>
+
+                <span>
+                    My Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="saved.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    ⭐
+                </div>
+
+                <span>
+                    Saved Opportunities
+                </span>
+
+            </a>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero">
+
+        <h1>
+            💼 Internships
+        </h1>
+
+
+        <p>
+            Find internships that help you gain
+            real-world experience and become
+            placement ready.
+        </p>
+
+    </div>
+
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search internships by role, company or skill..."
+            onkeyup="searchInternships()">
+
+    </div>
+
+
+
+    <!-- ================= INTERNSHIPS ================= -->
+
+    <div
+        class="internship-grid"
+        id="internshipGrid">
+
+
+        <!-- ================= INTERNSHIP 1 ================= -->
+
+        <div class="internship-card">
+
+
+            <div class="company">
+
+                <div class="company-left">
+
+                    <div class="company-logo">
+                        💻
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Software Development
+                        </h4>
+
+                        <h4>
+                            Technology Company
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    data-id="201"
+                    onclick="saveInternship(this, 201)">
+
+                    ☆
+
+                </button>
+
+            </div>
+
+
+            <h3>
+                Software Developer Intern
+            </h3>
+
+
+            <p class="description">
+
+                Work on software development
+                projects and strengthen your
+                programming and development skills.
+
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    📍 Location
+
+                    <strong>
+                        Remote
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    💰 Stipend
+
+                    <strong>
+                        ₹15,000 / month
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    ⏱ Duration
+
+                    <strong>
+                        3 Months
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    🎓 Eligibility
+
+                    <strong>
+                        B.E / B.Tech
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://internshala.com/internships/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="apply-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= INTERNSHIP 2 ================= -->
+
+        <div class="internship-card">
+
+
+            <div class="company">
+
+                <div class="company-left">
+
+                    <div class="company-logo">
+                        🐍
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Python Development
+                        </h4>
+
+                        <h4>
+                            Technology Company
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    data-id="202"
+                    onclick="saveInternship(this, 202)">
+
+                    ☆
+
+                </button>
+
+            </div>
+
+
+            <h3>
+                Python Developer Intern
+            </h3>
+
+
+            <p class="description">
+
+                Build Python-based applications
+                and work with APIs, databases and
+                real-world development projects.
+
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    📍 Location
+
+                    <strong>
+                        Remote
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    💰 Stipend
+
+                    <strong>
+                        ₹12,000 / month
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    ⏱ Duration
+
+                    <strong>
+                        6 Months
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    🎓 Eligibility
+
+                    <strong>
+                        B.E / B.Tech
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://internshala.com/internships/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="apply-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= INTERNSHIP 3 ================= -->
+
+        <div class="internship-card">
+
+
+            <div class="company">
+
+                <div class="company-left">
+
+                    <div class="company-logo">
+                        🌐
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Web Development
+                        </h4>
+
+                        <h4>
+                            Technology Company
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    data-id="203"
+                    onclick="saveInternship(this, 203)">
+
+                    ☆
+
+                </button>
+
+            </div>
+
+
+            <h3>
+                Frontend Developer Intern
+            </h3>
+
+
+            <p class="description">
+
+                Create responsive websites using
+                HTML, CSS, JavaScript and modern
+                frontend technologies.
+
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    📍 Location
+
+                    <strong>
+                        Hybrid
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    💰 Stipend
+
+                    <strong>
+                        ₹10,000 / month
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    ⏱ Duration
+
+                    <strong>
+                        3 Months
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    🎓 Eligibility
+
+                    <strong>
+                        B.E / B.Tech
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://internshala.com/internships/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="apply-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= INTERNSHIP 4 ================= -->
+
+        <div class="internship-card">
+
+
+            <div class="company">
+
+                <div class="company-left">
+
+                    <div class="company-logo">
+                        🤖
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Artificial Intelligence
+                        </h4>
+
+                        <h4>
+                            Technology Company
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    data-id="204"
+                    onclick="saveInternship(this, 204)">
+
+                    ☆
+
+                </button>
+
+            </div>
+
+
+            <h3>
+                Machine Learning Intern
+            </h3>
+
+
+            <p class="description">
+
+                Work with datasets, machine learning
+                models and data analysis to solve
+                real-world problems.
+
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    📍 Location
+
+                    <strong>
+                        Remote
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    💰 Stipend
+
+                    <strong>
+                        ₹18,000 / month
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    ⏱ Duration
+
+                    <strong>
+                        6 Months
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    🎓 Eligibility
+
+                    <strong>
+                        CSE / AIML
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://www.google.com/about/careers/applications/internships/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="apply-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= INTERNSHIP 5 ================= -->
+
+        <div class="internship-card">
+
+
+            <div class="company">
+
+                <div class="company-left">
+
+                    <div class="company-logo">
+                        ☕
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Java Development
+                        </h4>
+
+                        <h4>
+                            Technology Company
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    data-id="205"
+                    onclick="saveInternship(this, 205)">
+
+                    ☆
+
+                </button>
+
+            </div>
+
+
+            <h3>
+                Java Developer Intern
+            </h3>
+
+
+            <p class="description">
+
+                Develop Java applications and
+                improve your understanding of OOP,
+                databases and backend development.
+
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    📍 Location
+
+                    <strong>
+                        On-site
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    💰 Stipend
+
+                    <strong>
+                        ₹14,000 / month
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    ⏱ Duration
+
+                    <strong>
+                        4 Months
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    🎓 Eligibility
+
+                    <strong>
+                        B.E / B.Tech
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://www.amazon.jobs/content/en/career-programs/university/internships-for-students/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="apply-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= INTERNSHIP 6 ================= -->
+
+        <div class="internship-card">
+
+
+            <div class="company">
+
+                <div class="company-left">
+
+                    <div class="company-logo">
+                        🔐
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Cyber Security
+                        </h4>
+
+                        <h4>
+                            Technology Company
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-btn"
+                    data-id="206"
+                    onclick="saveInternship(this, 206)">
+
+                    ☆
+
+                </button>
+
+            </div>
+
+
+            <h3>
+                Cyber Security Intern
+            </h3>
+
+
+            <p class="description">
+
+                Learn about network security,
+                vulnerability assessment and
+                security monitoring.
+
+            </p>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    📍 Location
+
+                    <strong>
+                        Hybrid
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    💰 Stipend
+
+                    <strong>
+                        ₹13,000 / month
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    ⏱ Duration
+
+                    <strong>
+                        3 Months
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    🎓 Eligibility
+
+                    <strong>
+                        CSE / IT
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://careers.microsoft.com/v2/global/en/students"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="apply-btn">
+
+                Apply Now →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* ================= SIDEBAR ================= */
+
+        function openSidebar() {
+
+            document.getElementById(
+                "sidebar"
+            ).style.width = "350px";
+
+        }
+
+
+        function closeSidebar() {
+
+            document.getElementById(
+                "sidebar"
+            ).style.width = "0";
+
+        }
+
+
+
+        /* ================= SEARCH ================= */
+
+        function searchInternships() {
+
+            let input =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase();
+
+
+            let cards =
+                document.querySelectorAll(
+                    ".internship-card"
+                );
+
+
+            cards.forEach(
+                function(card) {
+
+                    let text =
+                        card.innerText
+                            .toLowerCase();
+
+
+                    if (
+                        text.includes(input)
+                    ) {
+
+                        card.style.display =
+                            "";
+
+                    }
+
+                    else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           SAVED OPPORTUNITIES
+           ================================================= */
+
+
+        let savedOpportunities =
+            JSON.parse(
+                localStorage.getItem(
+                    "careerPrepSavedOpportunities"
+                )
+            ) || [];
+
+
+
+        /* ================= INTERNSHIP DATA ================= */
+
+        const internships = {
+
+
+            201: {
+
+                id: 201,
+
+                company:
+                    "Technology Company",
+
+                role:
+                    "Software Developer Intern",
+
+                type:
+                    "Internship",
+
+                location:
+                    "Remote",
+
+                deadline:
+                    "30 Aug 2026",
+
+                skills: [
+                    "Software Development",
+                    "Programming",
+                    "Development"
+                ],
+
+                link:
+                    "https://internshala.com/internships/"
+
+            },
+
+
+            202: {
+
+                id: 202,
+
+                company:
+                    "Technology Company",
+
+                role:
+                    "Python Developer Intern",
+
+                type:
+                    "Internship",
+
+                location:
+                    "Remote",
+
+                deadline:
+                    "5 Sep 2026",
+
+                skills: [
+                    "Python",
+                    "API",
+                    "Databases"
+                ],
+
+                link:
+                    "https://internshala.com/internships/"
+
+            },
+
+
+            203: {
+
+                id: 203,
+
+                company:
+                    "Technology Company",
+
+                role:
+                    "Frontend Developer Intern",
+
+                type:
+                    "Internship",
+
+                location:
+                    "Hybrid",
+
+                deadline:
+                    "10 Sep 2026",
+
+                skills: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+
+                link:
+                    "https://internshala.com/internships/"
+
+            },
+
+
+            204: {
+
+                id: 204,
+
+                company:
+                    "Technology Company",
+
+                role:
+                    "Machine Learning Intern",
+
+                type:
+                    "Internship",
+
+                location:
+                    "Remote",
+
+                deadline:
+                    "15 Sep 2026",
+
+                skills: [
+                    "Python",
+                    "Machine Learning",
+                    "Data Analysis"
+                ],
+
+                link:
+                    "https://www.google.com/about/careers/applications/internships/"
+
+            },
+
+
+            205: {
+
+                id: 205,
+
+                company:
+                    "Technology Company",
+
+                role:
+                    "Java Developer Intern",
+
+                type:
+                    "Internship",
+
+                location:
+                    "On-site",
+
+                deadline:
+                    "20 Sep 2026",
+
+                skills: [
+                    "Java",
+                    "OOP",
+                    "SQL"
+                ],
+
+                link:
+                    "https://www.amazon.jobs/content/en/career-programs/university/internships-for-students/"
+
+            },
+
+
+            206: {
+
+                id: 206,
+
+                company:
+                    "Technology Company",
+
+                role:
+                    "Cyber Security Intern",
+
+                type:
+                    "Internship",
+
+                location:
+                    "Hybrid",
+
+                deadline:
+                    "25 Sep 2026",
+
+                skills: [
+                    "Cyber Security",
+                    "Networking",
+                    "Security"
+                ],
+
+                link:
+                    "https://careers.microsoft.com/v2/global/en/students"
+
+            }
+
+        };
+
+
+
+        /* ================= SAVE INTERNSHIP ================= */
+
+        function saveInternship(
+            button,
+            internshipId
+        ) {
+
+
+            const internship =
+                internships[internshipId];
+
+
+            if (!internship) {
+
+                return;
+
+            }
+
+
+            const existingIndex =
+                savedOpportunities.findIndex(
+                    function(item) {
+
+                        return (
+                            item.id ===
+                            internship.id
+                        );
+
+                    }
+                );
+
+
+            /* ========== REMOVE ========== */
+
+            if (
+                existingIndex !== -1
+            ) {
+
+
+                savedOpportunities.splice(
+                    existingIndex,
+                    1
+                );
+
+
+                button.innerHTML =
+                    "☆";
+
+
+                button.classList.remove(
+                    "saved"
+                );
+
+
+                alert(
+                    "Internship removed from Saved Opportunities."
+                );
+
+            }
+
+
+            /* ========== SAVE ========== */
+
+            else {
+
+
+                savedOpportunities.push(
+                    internship
+                );
+
+
+                button.innerHTML =
+                    "★";
+
+
+                button.classList.add(
+                    "saved"
+                );
+
+
+                alert(
+                    "Internship saved successfully! ⭐"
+                );
+
+            }
+
+
+            /* Save in browser */
+
+            localStorage.setItem(
+
+                "careerPrepSavedOpportunities",
+
+                JSON.stringify(
+                    savedOpportunities
+                )
+
+            );
+
+        }
+
+
+
+        /* ================= LOAD SAVED ================= */
+
+        function loadSavedInternships() {
+
+
+            const buttons =
+                document.querySelectorAll(
+                    ".save-btn"
+                );
+
+
+            buttons.forEach(
+                function(button) {
+
+
+                    const id =
+                        Number(
+                            button.dataset.id
+                        );
+
+
+                    const isSaved =
+                        savedOpportunities.some(
+                            function(item) {
+
+                                return (
+                                    item.id === id
+                                );
+
+                            }
+                        );
+
+
+                    if (isSaved) {
+
+                        button.innerHTML =
+                            "★";
+
+                        button.classList.add(
+                            "saved"
+                        );
+
+                    }
+
+
+                }
+            );
+
+        }
+
+
+
+        /* ================= PAGE LOAD ================= */
+
+        loadSavedInternships();
+
+
+    </script>
+
+
+</body>
+
+</html>

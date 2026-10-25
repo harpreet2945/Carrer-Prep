@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aptitude & Coding | CareerPrep</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1e293b;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 80px;
+            background: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 40px;
+
+            position: sticky;
+            top: 0;
+            z-index: 999;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .menu-btn {
+            width: 50px;
+            height: 50px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #1e293b;
+            color: white;
+
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 12px;
+            background: #38bdf8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+        }
+
+        .logo h2 {
+            color: #0f172a;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .login-btn {
+            background: #374151;
+            color: white;
+
+            padding: 12px 22px;
+
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 0;
+            height: 100%;
+
+            background: white;
+
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            transition: 0.4s;
+
+            z-index: 1000;
+
+            box-shadow: 0 0 20px rgba(0,0,0,.2);
+        }
+
+        .sidebar-header {
+            background: linear-gradient(
+                135deg,
+                #1d4ed8,
+                #06b6d4
+            );
+
+            color: white;
+
+            padding: 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 15px;
+
+            background: rgba(255,255,255,.15);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 28px;
+        }
+
+        .sidebar-logo span {
+            color: #7dd3fc;
+        }
+
+        .sidebar-logo p {
+            font-size: 13px;
+        }
+
+        .close-btn {
+            border: none;
+
+            background: rgba(255,255,255,.15);
+
+            color: white;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 12px;
+
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .sidebar-content {
+            padding: 25px;
+        }
+
+        .section-title {
+            font-size: 12px;
+
+            color: #94a3b8;
+
+            letter-spacing: 3px;
+
+            font-weight: 700;
+
+            margin: 20px 0;
+        }
+
+        .side-link {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            text-decoration: none;
+
+            color: #111827;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            margin-bottom: 10px;
+
+            transition: .3s;
+
+            font-weight: 600;
+        }
+
+        .side-link:hover {
+            background: #f1f5f9;
+        }
+
+        .side-link.active {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .side-icon {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 15px;
+
+            background: #e0f2fe;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 22px;
+        }
+
+        .support-box {
+            margin-top: 30px;
+
+            background: #f8fafc;
+
+            padding: 20px;
+
+            border-radius: 20px;
+        }
+
+        .support-box p {
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .support-btn {
+            width: 100%;
+
+            margin-top: 15px;
+
+            border: none;
+
+            background: #0f172a;
+
+            color: white;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #2563eb
+            );
+
+            color: white;
+
+            padding: 40px;
+
+            margin: 20px;
+
+            border-radius: 25px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+        }
+
+        .hero p {
+            margin-top: 10px;
+
+            color: #dbeafe;
+
+            max-width: 700px;
+        }
+
+
+        /* ================= PROGRESS ================= */
+
+        .progress-section {
+            margin: 25px 30px;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,.06);
+        }
+
+        .progress-header {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 12px;
+        }
+
+        .progress-header span {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+
+            height: 10px;
+
+            background: #e2e8f0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 35%;
+
+            height: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #2563eb,
+                #06b6d4
+            );
+
+            border-radius: 20px;
+        }
+
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            margin: 20px 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            padding: 16px;
+
+            border-radius: 15px;
+
+            border: 1px solid #ddd;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .page-section {
+            padding: 10px 30px 35px;
+        }
+
+        .page-section h2 {
+            margin-bottom: 20px;
+            font-size: 27px;
+        }
+
+
+        /* ================= CARD GRID ================= */
+
+        .card-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* ================= PRACTICE CARD ================= */
+
+        .practice-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,.07);
+
+            transition: .3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .practice-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background: linear-gradient(
+                90deg,
+                #2563eb,
+                #06b6d4
+            );
+        }
+
+        .practice-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 35px rgba(37,99,235,.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 15px;
+
+            background: #e0f2fe;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 28px;
+
+            margin-bottom: 18px;
+        }
+
+        .practice-card h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .practice-card p {
+            color: #64748b;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+        .topics {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        .topics span {
+            background: #f1f5f9;
+
+            color: #475569;
+
+            padding: 5px 9px;
+
+            border-radius: 8px;
+
+            font-size: 11px;
+        }
+
+        .start-btn {
+            display: block;
+
+            text-align: center;
+
+            padding: 12px;
+
+            border-radius: 11px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: 600;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #06b6d4
+            );
+
+            transition: .3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.03);
+        }
+
+
+        /* ================= TESTS ================= */
+
+        .test-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .test-card {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.07);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .test-info {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .test-icon {
+            width: 50px;
+            height: 50px;
+
+            background: #e0f2fe;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 23px;
+        }
+
+        .test-info p {
+            color: #64748b;
+
+            font-size: 13px;
+
+            margin-top: 3px;
+        }
+
+        .test-btn {
+            padding: 10px 18px;
+
+            background: #0f172a;
+
+            color: white;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0f172a;
+
+            color: white;
+
+            margin-top: 40px;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 50px 40px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.5fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #38bdf8;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .footer-support h3 {
+            font-size: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .support-links {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .support-links a {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 15px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.04);
+
+            transition: 0.3s;
+        }
+
+        .support-links a:hover {
+            background: rgba(255,255,255,0.09);
+
+            transform: translateY(-3px);
+        }
+
+        .support-links a > span {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #e0f2fe;
+
+            border-radius: 10px;
+
+            font-size: 20px;
+        }
+
+        .support-links strong {
+            display: block;
+
+            font-size: 14px;
+
+            margin-bottom: 3px;
+        }
+
+        .support-links small {
+            color: #94a3b8;
+
+            font-size: 11px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 20px 40px;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1000px) {
+
+            .card-grid,
+            .test-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width: 800px) {
+
+            .footer-top {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+                padding: 40px 25px;
+            }
+
+            .support-links {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width: 700px) {
+
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .card-grid,
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-section {
+                padding: 10px 15px 30px;
+            }
+
+            .progress-section,
+            .search-box {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .test-card {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+
+                gap: 10px;
+
+                text-align: center;
+
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <button
+                class="menu-btn"
+                onclick="openSidebar()">
+
+                ☰
+
+            </button>
+
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <h2>
+                    Career<span>Prep</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                
+
+            </ul>
+
+
+            <a
+                href="login.html"
+                class="login-btn">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div
+        id="sidebar"
+        class="sidebar">
+
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-box">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>
+                        Career<span>Prep</span>
+                    </h2>
+
+                    <p>
+                        Your career companion
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                onclick="closeSidebar()">
+
+                ✖
+
+            </button>
+
+        </div>
+
+
+
+        <div class="sidebar-content">
+
+
+            <div class="section-title">
+                EXPLORE
+            </div>
+
+
+           
+
+
+            <a
+                href="courses.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📚
+                </div>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+
+            <a
+                href="internships.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    💼
+                </div>
+
+                <span>
+                    Internships
+                </span>
+
+            </a>
+
+
+            <a
+                href="jobs.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🔎
+                </div>
+
+                <span>
+                    Jobs
+                </span>
+
+            </a>
+
+
+            <a
+                href="interview.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🎤
+                </div>
+
+                <span>
+                    Interview Preparation
+                </span>
+
+            </a>
+
+
+
+            <div class="section-title">
+                CAREER TOOLS
+            </div>
+
+
+            <a
+                href="aptitude.html"
+                class="side-link active">
+
+                <div class="side-icon">
+                    🧠
+                </div>
+
+                <span>
+                    Aptitude & Coding
+                </span>
+
+            </a>
+
+
+            <a
+                href="resume.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📄
+                </div>
+
+                <span>
+                    Resume Builder
+                </span>
+
+            </a>
+
+
+            <a
+                href="application.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📊
+                </div>
+
+                <span>
+                    My Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="saved.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    ⭐
+                </div>
+
+                <span>
+                    Saved Opportunities
+                </span>
+
+            </a>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            🧠 Aptitude & Coding
+        </h1>
+
+        <p>
+            Practice aptitude questions and solve real coding
+            problems to prepare for placement assessments
+            and technical interviews.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= PROGRESS ================= -->
+
+    <section class="progress-section">
+
+        <div class="progress-header">
+
+            <h3>
+                Your Preparation Progress
+            </h3>
+
+            <span>
+                35% Complete
+            </span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div class="progress"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search aptitude topics or coding platforms..."
+            onkeyup="searchCards()">
+
+    </div>
+
+
+
+    <!-- ================= APTITUDE ================= -->
+
+    <section class="page-section">
+
+        <h2>
+            🧠 Aptitude Practice
+        </h2>
+
+
+        <div class="card-grid">
+
+
+            <!-- QUANTITATIVE -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    🔢
+                </div>
+
+                <h3>
+                    Quantitative Aptitude
+                </h3>
+
+                <p>
+                    Practice numerical problems commonly asked
+                    in placement aptitude tests.
+                </p>
+
+                <div class="topics">
+
+                    <span>Percentages</span>
+                    <span>Profit & Loss</span>
+                    <span>Time & Work</span>
+                    <span>Probability</span>
+
+                </div>
+
+                <a
+                    href="https://www.geeksforgeeks.org/quantitative-aptitude/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Start Practice →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- LOGICAL -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    🧩
+                </div>
+
+                <h3>
+                    Logical Reasoning
+                </h3>
+
+                <p>
+                    Practice reasoning and problem-solving
+                    questions for placement examinations.
+                </p>
+
+                <div class="topics">
+
+                    <span>Series</span>
+                    <span>Puzzles</span>
+                    <span>Relations</span>
+                    <span>Directions</span>
+
+                </div>
+
+                <a
+                    href="https://www.geeksforgeeks.org/logical-reasoning/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Start Practice →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- VERBAL -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Verbal Ability
+                </h3>
+
+                <p>
+                    Practice English and verbal ability questions
+                    frequently used in placement tests.
+                </p>
+
+                <div class="topics">
+
+                    <span>Grammar</span>
+                    <span>Vocabulary</span>
+                    <span>Reading</span>
+                    <span>Sentence Correction</span>
+
+                </div>
+
+                <a
+                    href="https://www.geeksforgeeks.org/english-grammar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Start Practice →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CODING PRACTICE ================= -->
+
+    <section class="page-section">
+
+        <h2>
+            💻 Coding Practice
+        </h2>
+
+
+        <div class="card-grid">
+
+
+            <!-- HACKERRANK -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    💻
+                </div>
+
+                <h3>
+                    HackerRank
+                </h3>
+
+                <p>
+                    Solve coding challenges and practice
+                    programming problems online.
+                </p>
+
+                <div class="topics">
+
+                    <span>C</span>
+                    <span>C++</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>SQL</span>
+
+                </div>
+
+                <a
+                    href="https://www.hackerrank.com/domains"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Practice Now →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- LEETCODE -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    🧩
+                </div>
+
+                <h3>
+                    LeetCode
+                </h3>
+
+                <p>
+                    Solve DSA and algorithm problems designed
+                    for technical interviews.
+                </p>
+
+                <div class="topics">
+
+                    <span>Arrays</span>
+                    <span>Strings</span>
+                    <span>Trees</span>
+                    <span>Graphs</span>
+                    <span>DP</span>
+
+                </div>
+
+                <a
+                    href="https://leetcode.com/problemset/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Solve Problems →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- CODECHEF -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    CodeChef
+                </h3>
+
+                <p>
+                    Practice programming problems online and
+                    improve your coding skills through challenges.
+                </p>
+
+                <div class="topics">
+
+                    <span>C</span>
+                    <span>C++</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+                <a
+                    href="https://www.codechef.com/practice"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Practice Now →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- CODEFORCES -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Codeforces
+                </h3>
+
+                <p>
+                    Solve challenging programming problems and
+                    develop strong competitive programming skills.
+                </p>
+
+                <div class="topics">
+
+                    <span>Algorithms</span>
+                    <span>DSA</span>
+                    <span>Math</span>
+                    <span>Problem Solving</span>
+
+                </div>
+
+                <a
+                    href="https://codeforces.com/problemset"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Solve Problems →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- HACKEREARTH -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    HackerEarth
+                </h3>
+
+                <p>
+                    Practice programming challenges and improve
+                    your algorithm and problem-solving skills.
+                </p>
+
+                <div class="topics">
+
+                    <span>Programming</span>
+                    <span>Algorithms</span>
+                    <span>DSA</span>
+                    <span>Challenges</span>
+
+                </div>
+
+                <a
+                    href="https://www.hackerearth.com/practice/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Start Coding →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- DSA -->
+
+            <div class="practice-card">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    DSA Practice
+                </h3>
+
+                <p>
+                    Practice data structures and algorithms
+                    for technical coding interviews.
+                </p>
+
+                <div class="topics">
+
+                    <span>Arrays</span>
+                    <span>Linked Lists</span>
+                    <span>Trees</span>
+                    <span>Graphs</span>
+                    <span>DP</span>
+
+                </div>
+
+                <a
+                    href="https://leetcode.com/problemset/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="start-btn">
+
+                    Practice DSA →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PLACEMENT TESTS ================= -->
+
+    <section class="page-section">
+
+        <h2>
+            📝 Placement Tests
+        </h2>
+
+
+        <div class="test-grid">
+
+
+            <!-- APTITUDE TEST -->
+
+            <div class="test-card">
+
+                <div class="test-info">
+
+                    <div class="test-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Aptitude Mock Test
+                        </h3>
+
+                        <p>
+                            30 Questions • 30 Minutes
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.geeksforgeeks.org/aptitude-questions-and-answers/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="test-btn">
+
+                    Start
+
+                </a>
+
+            </div>
+
+
+
+            <!-- CODING TEST -->
+
+            <div class="test-card">
+
+                <div class="test-info">
+
+                    <div class="test-icon">
+                        💻
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Coding Test
+                        </h3>
+
+                        <p>
+                            Coding Problems • Practice Online
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.hackerrank.com/domains"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="test-btn">
+
+                    Start
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FULL TEST -->
+
+            <div class="test-card">
+
+                <div class="test-info">
+
+                    <div class="test-icon">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Full Placement Test
+                        </h3>
+
+                        <p>
+                            Aptitude + Coding Practice
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.hackerrank.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="test-btn">
+
+                    Start
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* OPEN SIDEBAR */
+
+        function openSidebar() {
+
+            document.getElementById("sidebar").style.width = "350px";
+
+        }
+
+
+        /* CLOSE SIDEBAR */
+
+        function closeSidebar() {
+
+            document.getElementById("sidebar").style.width = "0";
+
+        }
+
+
+        /* SEARCH */
+
+        function searchCards() {
+
+            let input =
+                document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            let cards =
+                document.querySelectorAll(
+                    ".practice-card"
+                );
+
+
+            cards.forEach(function(card) {
+
+                let text =
+                    card.innerText.toLowerCase();
+
+
+                if (text.includes(input)) {
+
+                    card.style.display = "";
+
+                }
+
+                else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

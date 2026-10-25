@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saved Opportunities | CareerPrep</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1e293b;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height:80px;
+    background:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 40px;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.menu-btn{
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#1e293b;
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:50px;
+    height:50px;
+
+    border-radius:12px;
+
+    background:#38bdf8;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+}
+
+.logo h2{
+    color:#0f172a;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.nav-links{
+    list-style:none;
+
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#475569;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#2563eb;
+}
+
+.login-btn{
+    background:#374151;
+    color:white;
+
+    padding:12px 22px;
+
+    text-decoration:none;
+    border-radius:10px;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:100%;
+
+    background:white;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    transition:0.4s;
+
+    z-index:1000;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.sidebar-header{
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #06b6d4
+    );
+
+    color:white;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+}
+
+.sidebar-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-box{
+    width:60px;
+    height:60px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.15);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+}
+
+.sidebar-logo span{
+    color:#7dd3fc;
+}
+
+.sidebar-logo p{
+    font-size:13px;
+}
+
+.close-btn{
+    border:none;
+
+    background:rgba(255,255,255,0.15);
+
+    color:white;
+
+    width:50px;
+    height:50px;
+
+    border-radius:12px;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.sidebar-content{
+    padding:25px;
+}
+
+.section-title{
+    font-size:12px;
+
+    color:#94a3b8;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+    margin:20px 0;
+}
+
+.side-link{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#111827;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:10px;
+
+    transition:0.3s;
+
+    font-weight:600;
+}
+
+.side-link:hover{
+    background:#f1f5f9;
+}
+
+.side-link.active{
+    background:#eff6ff;
+    color:#2563eb;
+}
+
+.side-icon{
+    width:50px;
+    height:50px;
+
+    border-radius:15px;
+
+    background:#e0f2fe;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+}
+
+.support-box{
+    margin-top:30px;
+
+    background:#f8fafc;
+
+    padding:20px;
+
+    border-radius:20px;
+}
+
+.support-box p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+.support-btn{
+    width:100%;
+
+    margin-top:15px;
+
+    border:none;
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #2563eb
+    );
+
+    color:white;
+
+    padding:45px;
+
+    margin:20px;
+
+    border-radius:25px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    margin-top:10px;
+    color:#dbeafe;
+}
+
+
+/* ================= STATS ================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+    padding:0 30px;
+
+    margin-bottom:25px;
+}
+
+.stat-card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.stat-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:14px;
+
+    background:#eff6ff;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+}
+
+.stat-card h3{
+    font-size:25px;
+}
+
+.stat-card p{
+    color:#64748b;
+    font-size:13px;
+}
+
+
+/* ================= CONTROLS ================= */
+
+.controls{
+
+    background:white;
+
+    margin:0 30px 25px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+}
+
+.search-box{
+    flex:1;
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:13px 18px;
+
+    border:1px solid #dbe1e8;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:14px;
+}
+
+.filter{
+
+    padding:13px;
+
+    border:1px solid #dbe1e8;
+
+    border-radius:10px;
+
+    background:white;
+
+    outline:none;
+
+}
+
+
+/* ================= OPPORTUNITIES ================= */
+
+.opportunities{
+
+    padding:0 30px 50px;
+}
+
+.opportunities-title{
+
+    margin-bottom:18px;
+
+    font-size:22px;
+}
+
+
+.opportunity-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+}
+
+
+.opportunity-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+.opportunity-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.10);
+}
+
+
+.card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:18px;
+}
+
+
+.company-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+
+.company-icon{
+
+    width:60px;
+    height:60px;
+
+    border-radius:15px;
+
+    background:#eff6ff;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:27px;
+}
+
+
+.company-name{
+
+    font-weight:700;
+
+    font-size:18px;
+}
+
+
+.role{
+
+    color:#2563eb;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-top:3px;
+}
+
+
+.remove-btn{
+
+    border:none;
+
+    background:#fff1f2;
+
+    color:#e11d48;
+
+    width:38px;
+    height:38px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+}
+
+
+.details{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    margin-bottom:18px;
+}
+
+
+.detail-item{
+
+    background:#f8fafc;
+
+    padding:10px;
+
+    border-radius:9px;
+}
+
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:20px;
+}
+
+
+.skill{
+
+    background:#f1f5f9;
+
+    color:#475569;
+
+    padding:5px 10px;
+
+    border-radius:15px;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+
+.card-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-top:1px solid #eef2f7;
+
+    padding-top:18px;
+}
+
+
+.deadline{
+
+    font-size:12px;
+
+    color:#64748b;
+}
+
+
+.apply-btn{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 17px;
+
+    border-radius:9px;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.apply-btn:hover{
+    opacity:0.9;
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty{
+
+    background:white;
+
+    padding:60px 30px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    color:#64748b;
+
+    grid-column:1/-1;
+}
+
+.empty-icon{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+}
+
+.empty h3{
+
+    color:#1e293b;
+
+    margin-bottom:7px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .opportunity-grid{
+        grid-template-columns:1fr;
+    }
+
+    .controls{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:0 15px;
+    }
+
+    .hero{
+        margin:15px;
+        padding:30px 20px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .stats{
+        padding:0 15px;
+    }
+
+    .controls{
+        margin:0 15px 20px;
+    }
+
+    .opportunities{
+        padding:0 15px 30px;
+    }
+
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    .card-bottom{
+        flex-direction:column;
+        gap:15px;
+        align-items:stretch;
+    }
+
+    .apply-btn{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+
+        <button
+            class="menu-btn"
+            onclick="openSidebar()">
+
+            ☰
+
+        </button>
+
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <h2>
+                Career<span>Prep</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-right">
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            
+
+        </ul>
+
+
+        <a
+            href="login.html"
+            class="login-btn">
+
+            Login
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<div
+    id="sidebar"
+    class="sidebar">
+
+
+    <div class="sidebar-header">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-box">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>
+                    Career<span>Prep</span>
+                </h2>
+
+                <p>
+                    Your career companion
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="close-btn"
+            onclick="closeSidebar()">
+
+            ✖
+
+        </button>
+
+    </div>
+
+
+    <div class="sidebar-content">
+
+
+        <div class="section-title">
+            EXPLORE
+        </div>
+
+
+        
+
+        <a
+            href="courses.html"
+            class="side-link">
+
+            <div class="side-icon">
+                📚
+            </div>
+
+            <span>
+                Courses
+            </span>
+
+        </a>
+
+
+        <a
+            href="internships.html"
+            class="side-link">
+
+            <div class="side-icon">
+                💼
+            </div>
+
+            <span>
+                Internships
+            </span>
+
+        </a>
+
+
+        <a
+            href="jobs.html"
+            class="side-link">
+
+            <div class="side-icon">
+                🔎
+            </div>
+
+            <span>
+                Jobs
+            </span>
+
+        </a>
+
+
+        <a
+            href="interview.html"
+            class="side-link">
+
+            <div class="side-icon">
+                🎤
+            </div>
+
+            <span>
+                Interview Preparation
+            </span>
+
+        </a>
+
+
+        <div class="section-title">
+            CAREER TOOLS
+        </div>
+
+
+        <a
+            href="aptitude.html"
+            class="side-link">
+
+            <div class="side-icon">
+                🧠
+            </div>
+
+            <span>
+                Aptitude & Coding
+            </span>
+
+        </a>
+
+
+        <a
+            href="resume.html"
+            class="side-link">
+
+            <div class="side-icon">
+                📄
+            </div>
+
+            <span>
+                Resume Builder
+            </span>
+
+        </a>
+
+
+        <a
+            href="application.html"
+            class="side-link">
+
+            <div class="side-icon">
+                📊
+            </div>
+
+            <span>
+                My Applications
+            </span>
+
+        </a>
+
+
+        <a
+            href="saved.html"
+            class="side-link active">
+
+            <div class="side-icon">
+                ⭐
+            </div>
+
+            <span>
+                Saved Opportunities
+            </span>
+
+        </a>
+
+
+       
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>
+        ⭐ Saved Opportunities
+    </h1>
+
+    <p>
+        Keep track of jobs and internships
+        you're interested in and apply whenever
+        you're ready.
+    </p>
+
+</section>
+
+
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats">
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            ⭐
+        </div>
+
+        <div>
+
+            <h3 id="totalSaved">
+                0
+            </h3>
+
+            <p>
+                Total Saved
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            💼
+        </div>
+
+        <div>
+
+            <h3 id="internshipCount">
+                0
+            </h3>
+
+            <p>
+                Internships
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            💼
+        </div>
+
+        <div>
+
+            <h3 id="jobCount">
+                0
+            </h3>
+
+            <p>
+                Jobs
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SEARCH / FILTER ================= -->
+
+<section class="controls">
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search company or role..."
+            oninput="displayOpportunities()">
+
+    </div>
+
+
+    <select
+        id="typeFilter"
+        class="filter"
+        onchange="displayOpportunities()">
+
+        <option value="all">
+            All Opportunities
+        </option>
+
+        <option value="Internship">
+            Internships
+        </option>
+
+        <option value="Job">
+            Jobs
+        </option>
+
+    </select>
+
+</section>
+
+
+
+<!-- ================= OPPORTUNITIES ================= -->
+
+<section class="opportunities">
+
+    <h2 class="opportunities-title">
+        Your Saved Opportunities
+    </h2>
+
+
+    <div
+        id="opportunityGrid"
+        class="opportunity-grid">
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+
+/* ================= SIDEBAR ================= */
+
+function openSidebar(){
+
+    document.getElementById(
+        "sidebar"
+    ).style.width="350px";
+
+}
+
+
+function closeSidebar(){
+
+    document.getElementById(
+        "sidebar"
+    ).style.width="0";
+
+}
+
+
+
+/* ================= DATA ================= */
+
+/*
+    The page first checks localStorage.
+
+    If your Jobs/Internships page saves
+    opportunities using the key:
+
+    careerPrepSavedOpportunities
+
+    they will automatically appear here.
+*/
+
+let savedOpportunities =
+    JSON.parse(
+        localStorage.getItem(
+            "careerPrepSavedOpportunities"
+        )
+    ) || [];
+
+
+
+/*
+    Demo data is added only when
+    there are no saved opportunities.
+
+    You can remove this section later
+    when your Jobs/Internships pages
+    are connected.
+*/
+
+if(savedOpportunities.length === 0){
+
+    savedOpportunities = [
+
+        {
+            id:1,
+
+            company:"Microsoft",
+
+            role:"Software Engineering Intern",
+
+            type:"Internship",
+
+            location:"Bengaluru, India",
+
+            deadline:"30 Aug 2026",
+
+            skills:[
+                "Java",
+                "Python",
+                "SQL"
+            ],
+
+            link:"https://careers.microsoft.com/"
+
+        },
+
+
+        {
+            id:2,
+
+            company:"Google",
+
+            role:"Software Engineer",
+
+            type:"Job",
+
+            location:"Hyderabad, India",
+
+            deadline:"5 Sep 2026",
+
+            skills:[
+                "Java",
+                "Data Structures",
+                "Algorithms"
+            ],
+
+            link:"https://www.google.com/about/careers/applications/"
+
+        },
+
+
+        {
+            id:3,
+
+            company:"Infosys",
+
+            role:"Graduate Engineer Trainee",
+
+            type:"Job",
+
+            location:"Pune, India",
+
+            deadline:"10 Sep 2026",
+
+            skills:[
+                "Java",
+                "SQL",
+                "Communication"
+            ],
+
+            link:"https://www.infosys.com/careers/"
+
+        },
+
+
+        {
+            id:4,
+
+            company:"Deloitte",
+
+            role:"Technology Intern",
+
+            type:"Internship",
+
+            location:"Gurugram, India",
+
+            deadline:"15 Sep 2026",
+
+            skills:[
+                "Python",
+                "SQL",
+                "Cloud"
+            ],
+
+            link:"https://www.deloitte.com/careers"
+
+        }
+
+    ];
+
+}
+
+
+
+/* ================= DISPLAY ================= */
+
+function displayOpportunities(){
+
+
+    const grid =
+        document.getElementById(
+            "opportunityGrid"
+        );
+
+
+    const search =
+        document.getElementById(
+            "searchInput"
+        )
+        .value
+        .toLowerCase();
+
+
+    const filter =
+        document.getElementById(
+            "typeFilter"
+        ).value;
+
+
+    const filtered =
+        savedOpportunities.filter(
+            function(item){
+
+                const matchesSearch =
+
+                    item.company
+                    .toLowerCase()
+                    .includes(search)
+
+                    ||
+
+                    item.role
+                    .toLowerCase()
+                    .includes(search);
+
+
+                const matchesFilter =
+
+                    filter === "all"
+
+                    ||
+
+                    item.type === filter;
+
+
+                return (
+                    matchesSearch &&
+                    matchesFilter
+                );
+
+            }
+        );
+
+
+    grid.innerHTML="";
+
+
+    if(filtered.length === 0){
+
+        grid.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    No saved opportunities
+                </h3>
+
+                <p>
+                    Save interesting jobs and internships
+                    to see them here.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    filtered.forEach(
+        function(item){
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "opportunity-card";
+
+
+            card.innerHTML = `
+
+                <div class="card-top">
+
+                    <div class="company-info">
+
+                        <div class="company-icon">
+                            🏢
+                        </div>
+
+                        <div>
+
+                            <div class="company-name">
+                                ${escapeHTML(item.company)}
+                            </div>
+
+                            <div class="role">
+                                ${escapeHTML(item.role)}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="remove-btn"
+                        onclick="removeOpportunity(${item.id})"
+                        title="Remove">
+
+                        ★
+
+                    </button>
+
+                </div>
+
+
+                <span class="badge">
+
+                    ${escapeHTML(item.type)}
+
+                </span>
+
+
+                <div class="details">
+
+                    <div class="detail-item">
+
+                        📍
+                        ${escapeHTML(item.location)}
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        ⏰
+                        Deadline:
+                        ${escapeHTML(item.deadline)}
+
+                    </div>
+
+                </div>
+
+
+                <div class="skills">
+
+                    ${
+                        item.skills
+                        .map(
+                            skill =>
+                            `
+                            <span class="skill">
+                                ${escapeHTML(skill)}
+                            </span>
+                            `
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+
+                <div class="card-bottom">
+
+                    <div class="deadline">
+
+                        ⭐ Saved Opportunity
+
+                    </div>
+
+
+                    <a
+                        href="${item.link}"
+                        target="_blank"
+                        class="apply-btn">
+
+                        Apply Now →
+
+                    </a>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+        }
+    );
+
+
+    updateStatistics();
+
+}
+
+
+
+/* ================= REMOVE ================= */
+
+function removeOpportunity(id){
+
+
+    const confirmation =
+        confirm(
+            "Remove this opportunity from saved items?"
+        );
+
+
+    if(!confirmation)
+        return;
+
+
+    savedOpportunities =
+        savedOpportunities.filter(
+            function(item){
+
+                return item.id !== id;
+
+            }
+        );
+
+
+    localStorage.setItem(
+
+        "careerPrepSavedOpportunities",
+
+        JSON.stringify(
+            savedOpportunities
+        )
+
+    );
+
+
+    displayOpportunities();
+
+}
+
+
+
+/* ================= STATISTICS ================= */
+
+function updateStatistics(){
+
+
+    document.getElementById(
+        "totalSaved"
+    ).innerText =
+        savedOpportunities.length;
+
+
+    document.getElementById(
+        "internshipCount"
+    ).innerText =
+
+        savedOpportunities.filter(
+            function(item){
+
+                return item.type === "Internship";
+
+            }
+        ).length;
+
+
+    document.getElementById(
+        "jobCount"
+    ).innerText =
+
+        savedOpportunities.filter(
+            function(item){
+
+                return item.type === "Job";
+
+            }
+        ).length;
+
+}
+
+
+
+/* ================= ESCAPE HTML ================= */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+    div.textContent =
+        text || "";
+
+    return div.innerHTML;
+
+}
+
+
+
+/* ================= INITIAL LOAD ================= */
+
+displayOpportunities();
+
+updateStatistics();
+
+
+</script>
+
+
+</body>
+
+</html>

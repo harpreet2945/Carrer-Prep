@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="refresh" content="3; url=index.html">
+<title>Video Loader</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+  }
+
+  /* Background video */
+  #bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* Loader overlay */
+  #loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+  }
+#loader {
+  background: rgba(0, 123, 255, 0.4); /* soft blue overlay */
+}
+#loader p {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+  /* Circle loader */
+  .circle {
+    border: 6px solid #444;
+    border-top: 6px solid whitesmoke;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Page sections */
+  .page {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+  }
+.page.left {
+  background: linear-gradient(to right, #007bff, #ffffff);
+}
+
+.page.right {
+        right: 0;
+    transform: translateX(100%);
+  background: linear-gradient(to left, #007bff, #ffffff);
+}
+
+
+  .page.show-left {
+    transform: translateX(0);
+  }
+
+  .page.show-right {
+    transform: translateX(0);
+  }
+</style>
+</head>
+<body>
+  <!-- Background video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="WhatsApp Video 2026-08-10 at 11.16.44 AM.mp4" type="video/mp4">
+    <!-- fallback text -->
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="circle"></div>
+    <p>Loading...</p>
+  </div>
+
+  <!-- Pages -->
+  <div class="page left">Welcome Page</div>
+  <div class="page right">Placement Portal</div>
+
+<script>
+  // Simulate loading
+  setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+    document.querySelector(".page.left").classList.add("show-left");
+    document.querySelector(".page.right").classList.add("show-right");
+  }, 4000);
+</script>
+</body>
+</html>

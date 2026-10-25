@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Preparation | CareerPrep</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1e293b;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 80px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .menu-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 12px;
+            background: #1e293b;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #38bdf8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .logo h2 {
+            color: #0f172a;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .login-btn {
+            background: #374151;
+            color: white;
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            transition: .4s;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #1d4ed8, #06b6d4);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, .15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+        }
+
+        .sidebar-logo span {
+            color: #7dd3fc;
+        }
+
+        .sidebar-logo p {
+            font-size: 13px;
+        }
+
+        .close-btn {
+            border: none;
+            background: rgba(255, 255, 255, .15);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .sidebar-content {
+            padding: 25px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            color: #94a3b8;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .side-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #111827;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            transition: .3s;
+            font-weight: 600;
+        }
+
+        .side-link:hover {
+            background: #f1f5f9;
+        }
+
+        .side-link.active {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .side-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: #e0f2fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+
+        .support-box {
+            margin-top: 30px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .support-box p {
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .support-btn {
+            width: 100%;
+            margin-top: 15px;
+            border: none;
+            background: #0f172a;
+            color: white;
+            padding: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            padding: 35px;
+            margin: 15px;
+            border-radius: 25px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            font-size: 16px;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            margin: 20px 15px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 17px 20px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 10px 30px 30px;
+        }
+
+        .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .section-heading h2 {
+            font-size: 27px;
+            color: #0f172a;
+        }
+
+        .section-heading p {
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        /* ================= CATEGORY CARDS ================= */
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 25px;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .07);
+            transition: .3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, .15);
+        }
+
+        .category-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            background: #e0f2fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ================= QUESTION CARDS ================= */
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, .06);
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .question h3 {
+            font-size: 16px;
+            color: #1e293b;
+        }
+
+        .toggle-btn {
+            min-width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 10px;
+            background: #e0f2fe;
+            color: #2563eb;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 12px;
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .answer.show {
+            display: block;
+        }
+
+        /* ================= PRACTICE CARDS ================= */
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .practice-card {
+            background: white;
+            padding: 25px;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .07);
+        }
+
+        .practice-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .practice-card p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .practice-btn {
+            display: inline-block;
+            padding: 11px 18px;
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .practice-btn:hover {
+            transform: scale(1.03);
+        }
+
+        /* ================= TIPS ================= */
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 23px;
+            border-radius: 20px;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, .06);
+        }
+
+        .tip-card span {
+            font-size: 25px;
+        }
+
+        .tip-card h3 {
+            margin: 10px 0 8px;
+        }
+
+        .tip-card p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1100px) {
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .practice-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width: 800px) {
+
+            .question-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width: 700px) {
+
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                margin: 10px;
+                padding: 25px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section {
+                padding: 10px 15px 25px;
+            }
+
+            .category-grid,
+            .practice-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <button
+                class="menu-btn"
+                onclick="openSidebar()">
+
+                ☰
+
+            </button>
+
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    🎓
+                </div>
+
+                <h2>
+                    Career<span>Prep</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                
+            </ul>
+
+
+            <a
+                href="login.html"
+                class="login-btn">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div
+        id="sidebar"
+        class="sidebar">
+
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-box">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>
+                        Career<span>Prep</span>
+                    </h2>
+
+                    <p>
+                        Your career companion
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                onclick="closeSidebar()">
+
+                ✖
+
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-content">
+
+
+            <div class="section-title">
+                EXPLORE
+            </div>
+
+
+            
+
+            <a
+                href="courses.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📚
+                </div>
+
+                <span>
+                    Courses
+                </span>
+
+            </a>
+
+
+            <a
+                href="internships.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    💼
+                </div>
+
+                <span>
+                    Internships
+                </span>
+
+            </a>
+
+
+            <a
+                href="jobs.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🔍
+                </div>
+
+                <span>
+                    Jobs
+                </span>
+
+            </a>
+
+
+            <a
+                href="interview.html"
+                class="side-link active">
+
+                <div class="side-icon">
+                    🎤
+                </div>
+
+                <span>
+                    Interview Preparation
+                </span>
+
+            </a>
+
+
+            <div class="section-title">
+                CAREER TOOLS
+            </div>
+
+
+            <a
+                href="aptitude.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    🧠
+                </div>
+
+                <span>
+                    Aptitude & Coding
+                </span>
+
+            </a>
+
+
+            <a
+                href="resume.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📄
+                </div>
+
+                <span>
+                    Resume Builder
+                </span>
+
+            </a>
+
+
+            <a
+                href="application.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    📊
+                </div>
+
+                <span>
+                    My Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="saved.html"
+                class="side-link">
+
+                <div class="side-icon">
+                    ⭐
+                </div>
+
+                <span>
+                    Saved Opportunities
+                </span>
+
+            </a>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            🎤 Interview Preparation
+        </h1>
+
+        <p>
+            Prepare confidently for technical, HR and
+            behavioral interviews with commonly asked
+            questions, useful tips and practice resources.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search interview questions..."
+            onkeyup="searchQuestions()">
+
+    </div>
+
+
+
+    <!-- ================= INTERVIEW CATEGORIES ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Interview Categories
+            </h2>
+
+            <p>
+                Focus on the areas commonly covered
+                during placement interviews.
+            </p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- HR -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    👨‍💼
+                </div>
+
+                <h3>
+                    HR Interview
+                </h3>
+
+                <p>
+                    Prepare answers for common HR
+                    questions, strengths, weaknesses,
+                    goals and introduction questions.
+                </p>
+
+            </div>
+
+
+            <!-- TECHNICAL -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Technical Interview
+                </h3>
+
+                <p>
+                    Revise programming, OOP, DBMS,
+                    operating systems, networking and
+                    other technical concepts.
+                </p>
+
+            </div>
+
+
+            <!-- BEHAVIORAL -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Behavioral Interview
+                </h3>
+
+                <p>
+                    Learn how to answer situation-based
+                    questions using your experiences
+                    and problem-solving skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HR QUESTIONS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                👨‍💼 Common HR Questions
+            </h2>
+
+            <p>
+                Click the + button to view a sample approach.
+            </p>
+
+        </div>
+
+
+        <div
+            class="question-grid"
+            id="questionGrid">
+
+
+            <!-- QUESTION 1 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        Tell me about yourself.
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Give a short introduction covering
+                    your education, technical skills,
+                    projects, achievements and career
+                    interests. Keep the answer relevant
+                    to the position.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 2 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        What are your strengths?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Mention two or three genuine strengths
+                    such as problem-solving, teamwork,
+                    adaptability or communication. Support
+                    them with a short example.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 3 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        What is your weakness?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Mention a real but manageable weakness
+                    and explain what you are doing to improve
+                    it. Avoid saying that you have no weaknesses.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 4 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        Why should we hire you?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Connect your skills, projects,
+                    learning ability and enthusiasm
+                    with the requirements of the role.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 5 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        Where do you see yourself in 5 years?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Discuss your professional growth,
+                    skills you want to develop and the
+                    kind of responsibilities you hope
+                    to handle in the future.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 6 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        Why do you want to join our company?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Research the company beforehand and
+                    connect its work, values or products
+                    with your interests and career goals.
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION 7 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        What is your biggest achievement?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Choose an academic, project or
+                    extracurricular achievement and
+                    explain what you did, what challenges
+                    you faced and what you learned.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 8 -->
+
+            <div class="question-card">
+
+                <div class="question">
+
+                    <h3>
+                        How do you handle pressure?
+                    </h3>
+
+                    <button
+                        class="toggle-btn"
+                        onclick="toggleAnswer(this)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <div class="answer">
+
+                    Explain how you prioritize tasks,
+                    remain organized and break difficult
+                    problems into smaller manageable steps.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TECHNICAL TOPICS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                💻 Technical Interview Topics
+            </h2>
+
+            <p>
+                Important technical subjects to revise
+                before your placement interview.
+            </p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- PROGRAMMING -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    C, C++, Java, Python, JavaScript,
+                    functions, arrays, strings,
+                    OOP and basic problem solving.
+                </p>
+
+            </div>
+
+
+            <!-- DBMS -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🗄️
+                </div>
+
+                <h3>
+                    DBMS
+                </h3>
+
+                <p>
+                    SQL, normalization, keys,
+                    transactions, joins, indexing
+                    and database concepts.
+                </p>
+
+            </div>
+
+
+            <!-- OS -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Operating Systems
+                </h3>
+
+                <p>
+                    Processes, threads, scheduling,
+                    memory management, paging and
+                    deadlocks.
+                </p>
+
+            </div>
+
+
+            <!-- NETWORKING -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Computer Networks
+                </h3>
+
+                <p>
+                    OSI model, TCP/IP, HTTP, DNS,
+                    IP addresses, routing and
+                    network protocols.
+                </p>
+
+            </div>
+
+
+            <!-- OOP -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🧩
+                </div>
+
+                <h3>
+                    Object Oriented Programming
+                </h3>
+
+                <p>
+                    Classes, objects, inheritance,
+                    polymorphism, abstraction,
+                    encapsulation and interfaces.
+                </p>
+
+            </div>
+
+
+            <!-- DATA STRUCTURES -->
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data Structures
+                </h3>
+
+                <p>
+                    Arrays, linked lists, stacks,
+                    queues, trees, searching,
+                    sorting and basic complexity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PRACTICE RESOURCES ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                🌐 Interview Preparation Resources
+            </h2>
+
+            <p>
+                Useful websites for interview questions,
+                company preparation and technical concepts.
+            </p>
+
+        </div>
+
+
+        <div class="practice-grid">
+
+
+            <!-- GEEKSFORGEEKS -->
+
+            <div class="practice-card">
+
+                <h3>
+                    🎯 GeeksforGeeks
+                </h3>
+
+                <p>
+                    Explore interview questions, technical
+                    concepts, company preparation and
+                    placement-related resources.
+                </p>
+
+                <a
+                    href="https://www.geeksforgeeks.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="practice-btn">
+
+                    Explore Resources →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- INTERNSHALA -->
+
+            <div class="practice-card">
+
+                <h3>
+                    💼 Internshala
+                </h3>
+
+                <p>
+                    Explore career resources, interview
+                    preparation material and opportunities
+                    for students and freshers.
+                </p>
+
+                <a
+                    href="https://internshala.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="practice-btn">
+
+                    Visit Website →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- LINKEDIN -->
+
+            <div class="practice-card">
+
+                <h3>
+                    🔗 LinkedIn
+                </h3>
+
+                <p>
+                    Build your professional profile,
+                    explore companies and discover
+                    career and interview resources.
+                </p>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="practice-btn">
+
+                    Visit LinkedIn →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= INTERVIEW TIPS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                ⭐ Interview Tips
+            </h2>
+
+            <p>
+                Small things that can make a big difference
+                during your interview.
+            </p>
+
+        </div>
+
+
+        <div class="tips-grid">
+
+
+            <!-- TIP 1 -->
+
+            <div class="tip-card">
+
+                <span>
+                    📚
+                </span>
+
+                <h3>
+                    Know Your Resume
+                </h3>
+
+                <p>
+                    Be prepared to explain every skill,
+                    project, internship and achievement
+                    mentioned on your resume.
+                </p>
+
+            </div>
+
+
+            <!-- TIP 2 -->
+
+            <div class="tip-card">
+
+                <span>
+                    🗣️
+                </span>
+
+                <h3>
+                    Communicate Clearly
+                </h3>
+
+                <p>
+                    Speak clearly and confidently.
+                    Take a moment to understand the
+                    question before answering.
+                </p>
+
+            </div>
+
+
+            <!-- TIP 3 -->
+
+            <div class="tip-card">
+
+                <span>
+                    🔍
+                </span>
+
+                <h3>
+                    Research the Company
+                </h3>
+
+                <p>
+                    Learn about the company's products,
+                    services, culture and the role before
+                    attending the interview.
+                </p>
+
+            </div>
+
+
+            <!-- TIP 4 -->
+
+            <div class="tip-card">
+
+                <span>
+                    ⏰
+                </span>
+
+                <h3>
+                    Be On Time
+                </h3>
+
+                <p>
+                    Join online interviews early and
+                    reach the interview location with
+                    sufficient time.
+                </p>
+
+            </div>
+
+
+            <!-- TIP 5 -->
+
+            <div class="tip-card">
+
+                <span>
+                    😊
+                </span>
+
+                <h3>
+                    Stay Confident
+                </h3>
+
+                <p>
+                    If you don't know an answer, be honest
+                    and explain how you would approach
+                    learning or solving the problem.
+                </p>
+
+            </div>
+
+
+            <!-- TIP 6 -->
+
+            <div class="tip-card">
+
+                <span>
+                    📝
+                </span>
+
+                <h3>
+                    Practice Mock Interviews
+                </h3>
+
+                <p>
+                    Practice answering questions aloud
+                    so that you become more comfortable
+                    speaking during the actual interview.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* ================= SIDEBAR ================= */
+
+        function openSidebar() {
+
+            document.getElementById("sidebar").style.width = "350px";
+
+        }
+
+
+        function closeSidebar() {
+
+            document.getElementById("sidebar").style.width = "0";
+
+        }
+
+
+
+        /* ================= QUESTION TOGGLE ================= */
+
+        function toggleAnswer(button) {
+
+            let answer =
+                button.parentElement.nextElementSibling;
+
+
+            answer.classList.toggle("show");
+
+
+            if (answer.classList.contains("show")) {
+
+                button.innerHTML = "−";
+
+            } else {
+
+                button.innerHTML = "+";
+
+            }
+
+        }
+
+
+
+        /* ================= SEARCH ================= */
+
+        function searchQuestions() {
+
+            let input =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            let cards =
+                document.querySelectorAll(".question-card");
+
+
+            cards.forEach(function(card) {
+
+                let text =
+                    card.innerText.toLowerCase();
+
+
+                if (text.includes(input)) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
